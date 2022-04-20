@@ -5,15 +5,14 @@ import { useOptionalUser } from "~/utils";
 
 export default function Index() {
   const user = useOptionalUser();
+  console.log(user);
+
   return (
     <Stack>
       {user ? (
         <Link to="/admin">Ad Manager</Link>
       ) : (
-        <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-          <Link to="/join">Sign up</Link>
-          <Link to="/login">Log In</Link>
-        </div>
+        <Link to="/login">Log In</Link>
       )}
     </Stack>
   );
